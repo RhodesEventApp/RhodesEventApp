@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A822CFB0297740660022B80B /* RhodesEventAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822CFAF297740660022B80B /* RhodesEventAppApp.swift */; };
+		A822CFB2297740660022B80B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822CFB1297740660022B80B /* ContentView.swift */; };
+		A822CFB42977406A0022B80B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A822CFB32977406A0022B80B /* Assets.xcassets */; };
+		A822CFB82977406A0022B80B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A822CFB72977406A0022B80B /* Preview Assets.xcassets */; };
+		A822CFC22977406B0022B80B /* RhodesEventAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822CFC12977406B0022B80B /* RhodesEventAppTests.swift */; };
+		A822CFCC2977406B0022B80B /* RhodesEventAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822CFCB2977406B0022B80B /* RhodesEventAppUITests.swift */; };
+		A822CFCE2977406B0022B80B /* RhodesEventAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822CFCD2977406B0022B80B /* RhodesEventAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A822CFBE2977406B0022B80B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A822CFA4297740660022B80B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A822CFAB297740660022B80B;
+			remoteInfo = RhodesEventApp;
+		};
+		A822CFC82977406B0022B80B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A822CFA4297740660022B80B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A822CFAB297740660022B80B;
+			remoteInfo = RhodesEventApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A822CFAC297740660022B80B /* RhodesEventApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RhodesEventApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A822CFAF297740660022B80B /* RhodesEventAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhodesEventAppApp.swift; sourceTree = "<group>"; };
+		A822CFB1297740660022B80B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A822CFB32977406A0022B80B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A822CFB52977406A0022B80B /* RhodesEventApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RhodesEventApp.entitlements; sourceTree = "<group>"; };
+		A822CFB72977406A0022B80B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A822CFBD2977406B0022B80B /* RhodesEventAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhodesEventAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A822CFC12977406B0022B80B /* RhodesEventAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhodesEventAppTests.swift; sourceTree = "<group>"; };
+		A822CFC72977406B0022B80B /* RhodesEventAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RhodesEventAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A822CFCB2977406B0022B80B /* RhodesEventAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhodesEventAppUITests.swift; sourceTree = "<group>"; };
+		A822CFCD2977406B0022B80B /* RhodesEventAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RhodesEventAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A822CFA9297740660022B80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A822CFBA2977406B0022B80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A822CFC42977406B0022B80B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A822CFA3297740660022B80B = {
+			isa = PBXGroup;
+			children = (
+				A822CFAE297740660022B80B /* RhodesEventApp */,
+				A822CFC02977406B0022B80B /* RhodesEventAppTests */,
+				A822CFCA2977406B0022B80B /* RhodesEventAppUITests */,
+				A822CFAD297740660022B80B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A822CFAD297740660022B80B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A822CFAC297740660022B80B /* RhodesEventApp.app */,
+				A822CFBD2977406B0022B80B /* RhodesEventAppTests.xctest */,
+				A822CFC72977406B0022B80B /* RhodesEventAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A822CFAE297740660022B80B /* RhodesEventApp */ = {
+			isa = PBXGroup;
+			children = (
+				A822CFAF297740660022B80B /* RhodesEventAppApp.swift */,
+				A822CFB1297740660022B80B /* ContentView.swift */,
+				A822CFB32977406A0022B80B /* Assets.xcassets */,
+				A822CFB52977406A0022B80B /* RhodesEventApp.entitlements */,
+				A822CFB62977406A0022B80B /* Preview Content */,
+			);
+			path = RhodesEventApp;
+			sourceTree = "<group>";
+		};
+		A822CFB62977406A0022B80B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A822CFB72977406A0022B80B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A822CFC02977406B0022B80B /* RhodesEventAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A822CFC12977406B0022B80B /* RhodesEventAppTests.swift */,
+			);
+			path = RhodesEventAppTests;
+			sourceTree = "<group>";
+		};
+		A822CFCA2977406B0022B80B /* RhodesEventAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A822CFCB2977406B0022B80B /* RhodesEventAppUITests.swift */,
+				A822CFCD2977406B0022B80B /* RhodesEventAppUITestsLaunchTests.swift */,
+			);
+			path = RhodesEventAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A822CFAB297740660022B80B /* RhodesEventApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A822CFD12977406B0022B80B /* Build configuration list for PBXNativeTarget "RhodesEventApp" */;
+			buildPhases = (
+				A822CFA8297740660022B80B /* Sources */,
+				A822CFA9297740660022B80B /* Frameworks */,
+				A822CFAA297740660022B80B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RhodesEventApp;
+			productName = RhodesEventApp;
+			productReference = A822CFAC297740660022B80B /* RhodesEventApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A822CFBC2977406B0022B80B /* RhodesEventAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A822CFD42977406B0022B80B /* Build configuration list for PBXNativeTarget "RhodesEventAppTests" */;
+			buildPhases = (
+				A822CFB92977406B0022B80B /* Sources */,
+				A822CFBA2977406B0022B80B /* Frameworks */,
+				A822CFBB2977406B0022B80B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A822CFBF2977406B0022B80B /* PBXTargetDependency */,
+			);
+			name = RhodesEventAppTests;
+			productName = RhodesEventAppTests;
+			productReference = A822CFBD2977406B0022B80B /* RhodesEventAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A822CFC62977406B0022B80B /* RhodesEventAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A822CFD72977406B0022B80B /* Build configuration list for PBXNativeTarget "RhodesEventAppUITests" */;
+			buildPhases = (
+				A822CFC32977406B0022B80B /* Sources */,
+				A822CFC42977406B0022B80B /* Frameworks */,
+				A822CFC52977406B0022B80B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A822CFC92977406B0022B80B /* PBXTargetDependency */,
+			);
+			name = RhodesEventAppUITests;
+			productName = RhodesEventAppUITests;
+			productReference = A822CFC72977406B0022B80B /* RhodesEventAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A822CFA4297740660022B80B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					A822CFAB297740660022B80B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					A822CFBC2977406B0022B80B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = A822CFAB297740660022B80B;
+					};
+					A822CFC62977406B0022B80B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = A822CFAB297740660022B80B;
+					};
+				};
+			};
+			buildConfigurationList = A822CFA7297740660022B80B /* Build configuration list for PBXProject "RhodesEventApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A822CFA3297740660022B80B;
+			productRefGroup = A822CFAD297740660022B80B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A822CFAB297740660022B80B /* RhodesEventApp */,
+				A822CFBC2977406B0022B80B /* RhodesEventAppTests */,
+				A822CFC62977406B0022B80B /* RhodesEventAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A822CFAA297740660022B80B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A822CFB82977406A0022B80B /* Preview Assets.xcassets in Resources */,
+				A822CFB42977406A0022B80B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A822CFBB2977406B0022B80B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A822CFC52977406B0022B80B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A822CFA8297740660022B80B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A822CFB2297740660022B80B /* ContentView.swift in Sources */,
+				A822CFB0297740660022B80B /* RhodesEventAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A822CFB92977406B0022B80B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A822CFC22977406B0022B80B /* RhodesEventAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A822CFC32977406B0022B80B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A822CFCE2977406B0022B80B /* RhodesEventAppUITestsLaunchTests.swift in Sources */,
+				A822CFCC2977406B0022B80B /* RhodesEventAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A822CFBF2977406B0022B80B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A822CFAB297740660022B80B /* RhodesEventApp */;
+			targetProxy = A822CFBE2977406B0022B80B /* PBXContainerItemProxy */;
+		};
+		A822CFC92977406B0022B80B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A822CFAB297740660022B80B /* RhodesEventApp */;
+			targetProxy = A822CFC82977406B0022B80B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A822CFCF2977406B0022B80B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A822CFD02977406B0022B80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		A822CFD22977406B0022B80B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RhodesEventApp/RhodesEventApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RhodesEventApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seniorsem.RhodesEventApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A822CFD32977406B0022B80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RhodesEventApp/RhodesEventApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RhodesEventApp/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seniorsem.RhodesEventApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A822CFD52977406B0022B80B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seniorsem.RhodesEventAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhodesEventApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RhodesEventApp";
+			};
+			name = Debug;
+		};
+		A822CFD62977406B0022B80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seniorsem.RhodesEventAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RhodesEventApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RhodesEventApp";
+			};
+			name = Release;
+		};
+		A822CFD82977406B0022B80B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seniorsem.RhodesEventAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RhodesEventApp;
+			};
+			name = Debug;
+		};
+		A822CFD92977406B0022B80B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = seniorsem.RhodesEventAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RhodesEventApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A822CFA7297740660022B80B /* Build configuration list for PBXProject "RhodesEventApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A822CFCF2977406B0022B80B /* Debug */,
+				A822CFD02977406B0022B80B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A822CFD12977406B0022B80B /* Build configuration list for PBXNativeTarget "RhodesEventApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A822CFD22977406B0022B80B /* Debug */,
+				A822CFD32977406B0022B80B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A822CFD42977406B0022B80B /* Build configuration list for PBXNativeTarget "RhodesEventAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A822CFD52977406B0022B80B /* Debug */,
+				A822CFD62977406B0022B80B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A822CFD72977406B0022B80B /* Build configuration list for PBXNativeTarget "RhodesEventAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A822CFD82977406B0022B80B /* Debug */,
+				A822CFD92977406B0022B80B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A822CFA4297740660022B80B /* Project object */;
+}
