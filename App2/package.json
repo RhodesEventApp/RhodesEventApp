@@ -10,9 +10,9 @@
       "cordova-plugin-whitelist": {}
     },
     "platforms": [
-      "android",
       "browser",
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "dependencies": {
