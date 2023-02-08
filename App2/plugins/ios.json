@@ -9,6 +9,11 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.chaosscape.aerophane"
+    },
+    "cordova-plugin-calendar": {
+      "CALENDAR_USAGE_DESCRIPTION": " ",
+      "CONTACTS_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "com.chaosscape.aerophane"
     }
   },
   "dependent_plugins": {}

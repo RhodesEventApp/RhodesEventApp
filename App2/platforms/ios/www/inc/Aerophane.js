@@ -5,7 +5,7 @@ function Aerophane(mainMenuTitle, mainMenuData, mainDeviceReady) {
     "use strict";
 
     var pageDeviceReady, isDeviceReady = false, classname;
-    mainMenuTitle = mainMenuTitle || "Aerophane";
+    mainMenuTitle = mainMenuTitle || "Rhodes Event Page";
 
     function isTouch() {
         return ("ontouchstart" in window || "onmsgesturechange" in window);

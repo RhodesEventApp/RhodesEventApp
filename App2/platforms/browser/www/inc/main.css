@@ -2,7 +2,7 @@
 
 /* Main application header */
 body > header {
-    background: #00d;
+    background: #699;
     color: #faa;
 }
 
@@ -18,7 +18,7 @@ body > nav#main h2 {
 
 /* Section headers */
 article > section > header {
-    background: #00d;
+    background: #c33;
 }
 
 /* Article h1 - h6 */
