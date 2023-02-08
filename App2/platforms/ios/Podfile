@@ -2,7 +2,7 @@
 
 platform :ios, '11.0'
 
-target 'C:\Users\tankm\App2\platforms\ios\Aerophane' do
-	project 'C:\Users\tankm\App2\platforms\ios\Aerophane.xcodeproj'
+target 'Aerophane' do
+	project 'Aerophane.xcodeproj'
 
 end
