@@ -12,12 +12,13 @@
       "cordova-plugin-calendar": {}
     },
     "platforms": [
-      "android",
       "browser",
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "dependencies": {
+    "firebase": "^9.17.1",
     "gradle": "^1.2.4"
   }
 }
