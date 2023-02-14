@@ -20,7 +20,6 @@
             <span class="month-picker" id="month-picker"> May </span>
             <div class="year-picker" id="year-picker">
             <span class="year-change" id="pre-year">
-              <pre><</pre>
             </span>
                 <span id="year">2020 </span>
                 <span class="year-change" id="next-year">
@@ -99,6 +98,10 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+  import { GoogleAuthProvider } from "firebase/auth";
+
+	const provider = new GoogleAuthProvider();
+
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
