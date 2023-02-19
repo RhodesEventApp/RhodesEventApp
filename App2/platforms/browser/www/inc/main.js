@@ -13,8 +13,8 @@ var aero;
     aero = new Aerophane("Rhodes Event Page", [
         {"name": "Home", "href": "../home/home.html"},
         {"name": "List", "href": "../list/list.html"},
-        {"name": "Tabs", "href": "../tabs/tabs.html"},
-        {"name": "Form", "href": "../form/form.html"}
+        {"name": "Calendar", "href": "../tabs/tabs.html"},
+        {"name": "Profile", "href": "../form/form.html"}
     ]);
 
 }());
