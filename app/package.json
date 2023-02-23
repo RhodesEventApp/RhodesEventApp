@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "firebase": "^9.17.1",
+    "firebaseui": "^6.0.2",
     "gradle": "^1.2.4"
   }
 }
