@@ -17,6 +17,7 @@
 		BF6FE520900447B997B76C24 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E90E3993D334F81A6FD9F0A /* Calendar.m */; };
 		937964F648CD48848660B1C2 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E60707664064F1A9B6B009A /* EventKit.framework */; };
 		1068EB38CDCC4693A8BD547A /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC06159734340CE80797AE6 /* EventKitUI.framework */; };
+		C991773F582E4B0FA65FD5F3 /* FirebaseAuthenticationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = A67C1608096C488281E0830B /* FirebaseAuthenticationPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		8DEF950B8E7E426BAC4E24BC /* Calendar.h */ = {isa = PBXFileReference; name = "Calendar.h"; path = "cordova-plugin-calendar/Calendar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		2E60707664064F1A9B6B009A /* EventKit.framework */ = {isa = PBXFileReference; name = "EventKit.framework"; path = "System/Library/Frameworks/EventKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		DAC06159734340CE80797AE6 /* EventKitUI.framework */ = {isa = PBXFileReference; name = "EventKitUI.framework"; path = "System/Library/Frameworks/EventKitUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		A67C1608096C488281E0830B /* FirebaseAuthenticationPlugin.m */ = {isa = PBXFileReference; name = "FirebaseAuthenticationPlugin.m"; path = "cordova-plugin-firebase-authentication/FirebaseAuthenticationPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		B4089B61A55240F9AC81BD2F /* FirebaseAuthenticationPlugin.h */ = {isa = PBXFileReference; name = "FirebaseAuthenticationPlugin.h"; path = "cordova-plugin-firebase-authentication/FirebaseAuthenticationPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +181,8 @@
 			children = (
 				4E90E3993D334F81A6FD9F0A /* Calendar.m */,
 				8DEF950B8E7E426BAC4E24BC /* Calendar.h */,
+				A67C1608096C488281E0830B /* FirebaseAuthenticationPlugin.m */,
+				B4089B61A55240F9AC81BD2F /* FirebaseAuthenticationPlugin.h */,
 			);
 			name = Plugins;
 			path = "Aerophane/Plugins";
@@ -307,6 +312,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				BF6FE520900447B997B76C24 /* Calendar.m in Sources */,
+				C991773F582E4B0FA65FD5F3 /* FirebaseAuthenticationPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

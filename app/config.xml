@@ -23,4 +23,10 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <universal-links>
+    <!-- <host name="DYNAMIC_LINK_DOMAIN" scheme="https" /> -->
+    <host name="rhodes-event-app.firebaseapp.com" scheme="https">
+        <path url="/__/auth/callback"/>
+    </host>
+</universal-links>
 </widget>

@@ -28,6 +28,10 @@
     <feature name="Calendar">
         <param name="ios-package" value="Calendar" />
     </feature>
+    <feature name="FirebaseAuthentication">
+        <param name="ios-package" value="FirebaseAuthenticationPlugin" />
+        <param name="onload" value="false" />
+    </feature>
     <name>Aerophane</name>
     <description>
         A lightweight basic template for Cordova apps.
@@ -43,6 +47,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <universal-links>
+        <host name="rhodes-event-app.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <preference name="AllowInlineMediaPlayback" value="false" />

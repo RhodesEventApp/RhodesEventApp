@@ -3,15 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-<meta name="format-detection" content="telephone=no">
+
+    <meta name="format-detection" content="telephone=no">
 <meta name="msapplication-tap-highlight" content="no">
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 <link rel="stylesheet" type="text/css" href="../inc/Aerophane.css">
 <link rel="stylesheet" type="text/css" href="../inc/main.css">
 
-<title>Aerophane - Tabs</title>
-
+<title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 <body>
+<div class="contianer">
+    <div class="calendar">
+        <div class="calendar-header">
+            <span class="month-picker" id="month-picker"> May </span>
+            <div class="year-picker" id="year-picker">
+            <span class="year-change" id="pre-year">
+            </span>
+                <span id="year">2020 </span>
+                <span class="year-change" id="next-year">
+              <pre>></pre>
+            </span>
+            </div>
+        </div>
+
+        <div class="calendar-body">
+            <div class="calendar-week-days">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="calendar-days">
+            </div>
+        </div>
+        <div class="calendar-footer">
+        </div>
+        <div class="date-time-formate">
+            <div class="day-text-formate">TODAY</div>
+            <div class="date-time-value">
+                <div class="time-formate">02:51:20</div>
+                <div class="date-formate">23 - july - 2022</div>
+            </div>
+        </div>
+        <div class="month-list"></div>
+    </div>
+</div>
 
 <header>
 <button>Menu</button>
@@ -51,3 +92,4 @@
 <script type="text/javascript" src="../inc/Aerophane.js"></script>
 <script type="text/javascript" src="../inc/main.js"></script>
 <script type="text/javascript" src="tabs.js"></script>
+

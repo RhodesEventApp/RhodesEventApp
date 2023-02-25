@@ -1,7 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.chaosscape.aerophane" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="BrowserTab">
+        <param name="android-package" value="com.google.cordova.plugin.browsertab.BrowserTab" />
+    </feature>
+    <feature name="BuildInfo">
+        <param name="android-package" value="org.apache.cordova.buildinfo.BuildInfo" />
+    </feature>
     <feature name="Calendar">
         <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="UniversalLinks">
+        <param name="android-package" value="com.nordnetab.cordova.ul.UniversalLinksPlugin" />
+        <param name="onload" value="true" />
     </feature>
     <name>Aerophane</name>
     <description>
@@ -18,6 +31,11 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <universal-links>
+        <host name="rhodes-event-app.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
 </widget>
