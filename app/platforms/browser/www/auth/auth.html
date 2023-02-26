@@ -8,109 +8,19 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="../inc/Aerophane.css">
     <link rel="stylesheet" type="text/css" href="../inc/main.css">
-    <script type="text/javascript" src="../cordova.js"></script>
-    <script type="text/javascript" src="../inc/Aerophane.js"></script>
-    <script type="text/javascript" src="../inc/main.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js"></script> -->
     <!-- <script type="text/javascript" src="form.js"></script> -->
     <!-- <script type="module">
-        import {loginEmailPassword, createAccount, logout, init} from "./auth.js";
-        window.onload = init;
+        import {loginEmailPassword, createAccount, enableLocalDebug, monitorAuthState, logout} from "./auth.js";
+        enableLocalDebug();
         document.getElementById("login").addEventListener("click", loginEmailPassword);
         document.getElementById("signup").addEventListener("click", createAccount);
+        document.getElementById("logout").addEventListener("click", logout);
+        monitorAuthState();
     </script> -->
-    <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
-        import { 
-            getAuth,
-            onAuthStateChanged, 
-            signOut,
-            createUserWithEmailAndPassword,
-            signInWithEmailAndPassword,
-            connectAuthEmulator
-        } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyCBlUCVYlX8eDsq3HrY8FNyLW-n7W8a-f8",
-            authDomain: "rhodes-event-app.firebaseapp.com",
-            projectId: "rhodes-event-app",
-            storageBucket: "rhodes-event-app.appspot.com",
-            messagingSenderId: "971156122604",
-            appId: "1:971156122604:web:18693652d87e028413aec9",
-            measurementId: "G-97KDY6FCG8"
-        };
-            
-        // Login using email/password
-        const loginEmailPassword = async () => {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-        
-            // step 1: try doing this w/o error handling, and then add try/catch
-            await signInWithEmailAndPassword(auth, email, password)
-        
-            // step 2: add error handling
-            // try {
-            //   await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-            // }
-            // catch(error) {
-            //   console.log(`There was an error: ${error}`)
-            //   showLoginError(error)
-            // }
-        }
-        
-        // Create new account using email/password
-        const createAccount = async () => {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            console.log(`email ${email}, password ${password}`)
-            try {
-                await createUserWithEmailAndPassword(auth, email, password)
-            }
-            catch(error) {
-                console.log(`There was an error: ${error}`)
-                showLoginError(error)
-            } 
-        }
-        
-        // Monitor auth state
-        const monitorAuthState = async () => {
-            onAuthStateChanged(auth, user => {
-                if (user) {
-                    console.log(user)
-                    showApp()
-                    showLoginState(user)
-                
-                    hideLoginError()
-                    hideLinkError()
-                }
-                else {
-                    showLoginForm()
-                    lblAuthState.innerHTML = `You're not logged in.`
-                }
-            })
-        }
-        
-        // Log out
-        const logout = async () => {
-            await signOut(auth);
-        }
-        
-        const app = initializeApp(firebaseConfig)
-        const auth = getAuth(app);
-
-        const debug = () => {
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            console.log(`email ${email}, password ${password}`)
-        }
-
-        connectAuthEmulator(auth, "http://localhost:9099");
-        monitorAuthState()
-        
-        document.getElementById("login").addEventListener("click", loginEmailPassword);
-        document.getElementById("signup").addEventListener("click", createAccount);
-    </script>
-    <title>Aerophane - Profile</title>
+    <script type="module" src="auth.js"></script>
+    <!-- <script type="module" src="auth.js"></script> -->
+    <title>Sign in</title>
 </head>
 <body>
     
@@ -122,16 +32,22 @@
     <article>
         <form>
             <fieldset>
-                <legend>Sign options</legend>
-                <label>Email</label>
-                <input id="email">
-                <label>Password</label>
-                <input id="password" type="password">
-                <!-- <button id="login" onclick="loginEmailPassword()">Log in</button>
-                <button id="signup" onclick="createAccount()">Sign up</button> -->
-                <button id="login">Log in</button>
-                <button id="signup">Sign up</button>
+                <div id="login-form">
+                    <legend>Sign options</legend>
+                    <label>Email</label>
+                    <input id="email">
+                    <label>Password</label>
+                    <input id="password" type="password">
+                    <!-- <button id="login" onclick="loginEmailPassword()">Log in</button>
+                    <button id="signup" onclick="createAccount()">Sign up</button> -->
+                    <p id="error-message" style="display: none">Invalid email or password</p>
+                    <button id="login">Log in</button>
+                    <button id="signup">Sign up</button>
+                </div>
+                <button id="logout" style="display: none">Log out</button>
             </fieldset>
         </form>
     </article>
+    <script type="text/javascript" src="../inc/Aerophane.js"></script>
+    <script type="text/javascript" src="../inc/main.js"></script>
 </body>
