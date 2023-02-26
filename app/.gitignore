@@ -6,5 +6,4 @@ build
 
 node_modules
 plugins
-../iOS
-../RhodesEventApp
+platforms
