@@ -50,11 +50,14 @@ const createAccount = async () => {
 
 const showLoginError = () => {
     document.getElementById("error-message").style.display = "block";
-// console.log("debug");
 }
 
 const showLogoutButton = () => {
     document.getElementById("logout").style.display = "block";
+}
+
+const showLoggedUser = (email) => {
+    document.getElementById("logged-user").innerHTML = `You are logged in as ${email}`;
 }
 
 const hideLoginForm = () => {
@@ -70,6 +73,7 @@ const monitorAuthState = async () => {
     onAuthStateChanged(auth, user => {
         if (user) {
             console.log(user)
+            showLoggedUser(user.email);
             showLogoutButton();
             hideLoginForm();
         }
@@ -96,7 +100,7 @@ document.getElementById("signup").addEventListener("click", function(event){
     event.preventDefault();
     createAccount();
   });
-document.getElementById("logout").addEventListener("click", logout);
+document.getElementById("logout-btn").addEventListener("click", logout);
 
 enableLocalDebug();
 monitorAuthState();

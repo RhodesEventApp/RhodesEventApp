@@ -13,8 +13,8 @@
       "cordova-plugin-calendar": {}
     },
     "platforms": [
-      "browser",
-      "ios"
+      "ios",
+      "browser"
     ]
   },
   "dependencies": {
