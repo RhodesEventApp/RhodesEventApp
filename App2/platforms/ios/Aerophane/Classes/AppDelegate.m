@@ -25,6 +25,8 @@
 //  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
 //
 
+@import UIKit;
+@import FirebaseCore;
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
@@ -32,8 +34,11 @@
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    [FIRApp configure];
     self.viewController = [[MainViewController alloc] init];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
+
+
 
 @end

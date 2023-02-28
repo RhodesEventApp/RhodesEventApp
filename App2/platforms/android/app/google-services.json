@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "582299594509",
+    "project_id": "event-promo-app",
+    "storage_bucket": "event-promo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582299594509:android:9ab27e97a65a5d60894a44",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "582299594509-3r939c6n9racpo2at7h0os9oaidd0ktq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.application",
+            "certificate_hash": "efd05625f961719062a34db51f7cf65a3f0f20c9"
+          }
+        },
+        {
+          "client_id": "582299594509-9pkqn3i035j6q6c73ugi31sutqbulegs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4yuQD3nJ9r-pyXdRVTS_CNUH8PzzUOns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "582299594509-9pkqn3i035j6q6c73ugi31sutqbulegs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "582299594509-fjj2tbmmpi3mms8v7h3i0v2elobtge2k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.chaosscape.aerophane"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
