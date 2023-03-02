@@ -52,6 +52,10 @@ const showLoginError = () => {
     document.getElementById("error-message").style.display = "block";
 }
 
+const hideLoginError = () => {
+    document.getElementById("error-message").style.display = "none";
+}
+
 const showLogoutButton = () => {
     document.getElementById("logout").style.display = "block";
 }
@@ -101,6 +105,8 @@ document.getElementById("signup").addEventListener("click", function(event){
     createAccount();
   });
 document.getElementById("logout-btn").addEventListener("click", logout);
+document.getElementById("email").addEventListener("focus", hideLoginError);
+document.getElementById("password").addEventListener("focus", hideLoginError);
 
 enableLocalDebug();
 monitorAuthState();
