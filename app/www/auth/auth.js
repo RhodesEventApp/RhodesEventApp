@@ -1,4 +1,3 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
 import { 
     getAuth,
     onAuthStateChanged, 
@@ -8,17 +7,8 @@ import {
     connectAuthEmulator
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCBlUCVYlX8eDsq3HrY8FNyLW-n7W8a-f8",
-    authDomain: "rhodes-event-app.firebaseapp.com",
-    projectId: "rhodes-event-app",
-    storageBucket: "rhodes-event-app.appspot.com",
-    messagingSenderId: "971156122604",
-    appId: "1:971156122604:web:18693652d87e028413aec9",
-    measurementId: "G-97KDY6FCG8"
-};
+import { app } from '../../firebase.js';
 
-const app = initializeApp(firebaseConfig)
 const auth = getAuth(app);
 
 // Login using email/password
