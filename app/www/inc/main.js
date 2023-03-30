@@ -15,7 +15,8 @@ var aero;
         {"name": "List", "href": "../list/list.html"},
         {"name": "Calendar", "href": "../tabs/tabs.html"},
         {"name": "Profile", "href": "../form/form.html"},
-        {"name": "Login/Register", "href": "../auth/auth.html"}
+        {"name": "Login/Register", "href": "../auth/auth.html"},
+        {"name": "Feed", "href": "../feed/feed.html"}
     ]);
 
 }());

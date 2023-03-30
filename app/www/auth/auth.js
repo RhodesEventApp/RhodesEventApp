@@ -1,4 +1,3 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js';
 import { 
     getAuth,
     onAuthStateChanged, 
@@ -8,18 +7,11 @@ import {
     connectAuthEmulator
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCBlUCVYlX8eDsq3HrY8FNyLW-n7W8a-f8",
-    authDomain: "rhodes-event-app.firebaseapp.com",
-    projectId: "rhodes-event-app",
-    storageBucket: "rhodes-event-app.appspot.com",
-    messagingSenderId: "971156122604",
-    appId: "1:971156122604:web:18693652d87e028413aec9",
-    measurementId: "G-97KDY6FCG8"
-};
+import { app } from '../../firebase.js';
 
-const app = initializeApp(firebaseConfig)
 const auth = getAuth(app);
+
+// let username = null;
 
 // Login using email/password
 const loginEmailPassword = async () => {
@@ -48,45 +40,6 @@ const createAccount = async () => {
     } 
 }
 
-const showLoginError = () => {
-    document.getElementById("error-message").style.display = "block";
-}
-
-const hideLoginError = () => {
-    document.getElementById("error-message").style.display = "none";
-}
-
-const showLogoutButton = () => {
-    document.getElementById("logout").style.display = "block";
-}
-
-const showLoggedUser = (email) => {
-    document.getElementById("logged-user").innerHTML = `You are logged in as ${email}`;
-}
-
-const hideLoginForm = () => {
-    document.getElementById("login-form").style.display = "none";
-}
-
-const showLoginForm = () => {
-    document.getElementById("login-form").style.display = "block";
-}
-
-// Monitor auth state
-const monitorAuthState = async () => {
-    onAuthStateChanged(auth, user => {
-        if (user) {
-            console.log(user)
-            showLoggedUser(user.email);
-            showLogoutButton();
-            hideLoginForm();
-        }
-        else {
-            showLoginForm()
-        }
-    })
-}
-
 // Log out
 const logout = async () => {
     await signOut(auth);
@@ -96,17 +49,8 @@ const enableLocalDebug = () => {
     connectAuthEmulator(auth, "http://localhost:9099");
 }
 
-document.getElementById("login").addEventListener("click", function(event){
-    event.preventDefault();
-    loginEmailPassword();
-  });
-document.getElementById("signup").addEventListener("click", function(event){
-    event.preventDefault();
-    createAccount();
-  });
-document.getElementById("logout-btn").addEventListener("click", logout);
-document.getElementById("email").addEventListener("focus", hideLoginError);
-document.getElementById("password").addEventListener("focus", hideLoginError);
+const showLoginError = () => {
+    document.getElementById("error-message").style.display = "block";
+}
 
-enableLocalDebug();
-monitorAuthState();
+export {auth, loginEmailPassword, createAccount, logout, enableLocalDebug};

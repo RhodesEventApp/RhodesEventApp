@@ -8,32 +8,26 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" type="text/css" href="../inc/Aerophane.css">
     <link rel="stylesheet" type="text/css" href="../inc/main.css">
-    <script type="module" src="ui.js"></script>
+    <script type="module" src="feed.js"></script>
     <title>Sign in</title>
 </head>
 <body>
-    
     <header>
         <button>Menu</button>
-        <h1>Profile</h1>
+        <h1>Feed</h1>
     </header>
     
-    <article>
+    <div id="unauthorized" style="display: block">
+        <p id="login-message">Please log in to view your feed.</p>
+    </div>
+
+    <article id="feed" style="display: none">
         <form>
             <fieldset>
-                <div id="login-form">
-                    <legend>Sign options</legend>
-                    <label>Email</label>
-                    <input id="email">
-                    <label>Password</label>
-                    <input id="password" type="password">
-                    <p id="error-message" style="display: none">Invalid email or password</p>
-                    <button id="login">Log in</button>
-                    <button id="signup">Sign up</button>
-                </div>
-                <div id="logout" style="display: none">
-                    <p id="logged-user"></p>
-                    <button id="logout-btn">Log out</button>
+                <div>
+                    <legend>Poster</legend>
+                    <input id="poster" type="file">
+                    <button id="post">Post</button>
                 </div>
             </fieldset>
         </form>
