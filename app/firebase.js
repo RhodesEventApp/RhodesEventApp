@@ -7,7 +7,8 @@ const firebaseConfig = {
     storageBucket: "rhodes-event-app.appspot.com",
     messagingSenderId: "971156122604",
     appId: "1:971156122604:web:18693652d87e028413aec9",
-    measurementId: "G-97KDY6FCG8"
+    measurementId: "G-97KDY6FCG8",
+    storageBucket: "gs://rhodes-event-app.appspot.com"
 };
 
 const app = initializeApp(firebaseConfig);

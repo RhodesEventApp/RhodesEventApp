@@ -11,6 +11,8 @@ import { app } from '../../firebase.js';
 
 const auth = getAuth(app);
 
+// let username = null;
+
 // Login using email/password
 const loginEmailPassword = async () => {
     var email = document.getElementById("email").value;
@@ -38,45 +40,6 @@ const createAccount = async () => {
     } 
 }
 
-const showLoginError = () => {
-    document.getElementById("error-message").style.display = "block";
-}
-
-const hideLoginError = () => {
-    document.getElementById("error-message").style.display = "none";
-}
-
-const showLogoutButton = () => {
-    document.getElementById("logout").style.display = "block";
-}
-
-const showLoggedUser = (email) => {
-    document.getElementById("logged-user").innerHTML = `You are logged in as ${email}`;
-}
-
-const hideLoginForm = () => {
-    document.getElementById("login-form").style.display = "none";
-}
-
-const showLoginForm = () => {
-    document.getElementById("login-form").style.display = "block";
-}
-
-// Monitor auth state
-const monitorAuthState = async () => {
-    onAuthStateChanged(auth, user => {
-        if (user) {
-            console.log(user)
-            showLoggedUser(user.email);
-            showLogoutButton();
-            hideLoginForm();
-        }
-        else {
-            showLoginForm()
-        }
-    })
-}
-
 // Log out
 const logout = async () => {
     await signOut(auth);
@@ -86,17 +49,8 @@ const enableLocalDebug = () => {
     connectAuthEmulator(auth, "http://localhost:9099");
 }
 
-document.getElementById("login").addEventListener("click", function(event){
-    event.preventDefault();
-    loginEmailPassword();
-  });
-document.getElementById("signup").addEventListener("click", function(event){
-    event.preventDefault();
-    createAccount();
-  });
-document.getElementById("logout-btn").addEventListener("click", logout);
-document.getElementById("email").addEventListener("focus", hideLoginError);
-document.getElementById("password").addEventListener("focus", hideLoginError);
+const showLoginError = () => {
+    document.getElementById("error-message").style.display = "block";
+}
 
-enableLocalDebug();
-monitorAuthState();
+export {auth, loginEmailPassword, createAccount, logout, enableLocalDebug};
