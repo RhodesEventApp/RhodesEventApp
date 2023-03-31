@@ -4,10 +4,12 @@ import {
     signOut,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    updateProfile,
     connectAuthEmulator
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
-import { app } from '../../firebase.js';
+import { app } from '../common/firebase.js';
+import { showElement } from '../common/ui.js';
 
 const auth = getAuth(app);
 
@@ -15,29 +17,38 @@ const auth = getAuth(app);
 
 // Login using email/password
 const loginEmailPassword = async () => {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+    var email = document.getElementById("login-email").value;
+    var password = document.getElementById("login-password").value;
     try {
         await signInWithEmailAndPassword(auth, email, password);
     }
     catch(error) {
-        console.log(`There was an error: ${error}`)
-        showLoginError(error)
+        console.log(`There was an error: ${error}`);
+        showLoginError(error);
     }
 }
 
 // Create new account using email/password
 const createAccount = async () => {
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    console.log(`email ${email}, password ${password}`)
-    try {
-        await createUserWithEmailAndPassword(auth, email, password)
-    }
-    catch(error) {
-        console.log(`There was an error: ${error}`)
-        showLoginError(error)
-    } 
+    var email = document.getElementById("signup-email").value;
+    var password = document.getElementById("signup-password").value;
+    var username = document.getElementById("username").value;
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            updateProfile(auth.currentUser, {
+                displayName: username,
+            }).then(() => {
+
+            }).catch((error) => {
+                showElement("error-message");
+                document.getElementById("error-message").innerHTML = `Error${error.code}: ${error.message}`;
+            });
+        })
+        .catch((error) => {
+            showElement("error-message");
+            document.getElementById("error-message").innerHTML = `Error${error.code}: ${error.message}`;
+        });
 }
 
 // Log out
@@ -47,10 +58,6 @@ const logout = async () => {
 
 const enableLocalDebug = () => {
     connectAuthEmulator(auth, "http://localhost:9099");
-}
-
-const showLoginError = () => {
-    document.getElementById("error-message").style.display = "block";
 }
 
 export {auth, loginEmailPassword, createAccount, logout, enableLocalDebug};
