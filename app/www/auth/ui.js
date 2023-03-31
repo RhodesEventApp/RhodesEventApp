@@ -8,25 +8,10 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
 import { auth, createAccount, loginEmailPassword, logout, enableLocalDebug } from './auth.js';
+import { showElement, hideElement } from '../common/ui.js';
 
-const hideLoginError = () => {
-    document.getElementById("error-message").style.display = "none";
-}
-
-const showLogoutButton = () => {
-    document.getElementById("logout").style.display = "block";
-}
-
-const showLoggedUser = (email) => {
-    document.getElementById("logged-user").innerHTML = `You are logged in as ${email}`;
-}
-
-const hideLoginForm = () => {
-    document.getElementById("login-form").style.display = "none";
-}
-
-const showLoginForm = () => {
-    document.getElementById("login-form").style.display = "block";
+const showLoggedUser = (username, email) => {
+    document.getElementById("logged-user").innerHTML = `You are logged in as ${username} (${email})`;
 }
 
 // Monitor auth state
@@ -34,27 +19,59 @@ const monitorAuthState = async () => {
     onAuthStateChanged(auth, user => {
         if (user) {
             console.log(user)
-            showLoggedUser(user.email);
-            showLogoutButton();
-            hideLoginForm();
+            showLoggedUser(user.displayName, user.email);
+            showElement("logout");
+            hideElement("form");
         }
         else {
-            showLoginForm();
+            showElement("form");
+            hideElement("logout");
         }
     })
 }
 
-document.getElementById("login").addEventListener("click", function(event){
+document.getElementById("login-btn").addEventListener("click", function(event){
     event.preventDefault();
     loginEmailPassword();
-  });
-document.getElementById("signup").addEventListener("click", function(event){
+});
+
+document.getElementById("signup-btn").addEventListener("click", function(event){
     event.preventDefault();
+    if (document.getElementById("username").value === "") {
+        showElement("error-message");
+        document.getElementById("error-message").innerHTML = "Please enter a username";
+        return;
+    }
     createAccount();
-  });
+});
+
 document.getElementById("logout-btn").addEventListener("click", logout);
-document.getElementById("email").addEventListener("focus", hideLoginError);
-document.getElementById("password").addEventListener("focus", hideLoginError);
+
+document.getElementById("login-email").addEventListener("focus", function(){
+    hideElement("error-message");
+});
+
+document.getElementById("login-password").addEventListener("focus", function(){
+    hideElement("error-message");
+});
+
+document.getElementById("signup-email").addEventListener("focus", function(){
+    hideElement("error-message");
+});
+
+document.getElementById("signup-password").addEventListener("focus", function(){
+    hideElement("error-message");
+});
+
+document.getElementById("login-option").addEventListener("click", function(){
+    showElement("login-form");
+    hideElement("signup-form");
+});
+
+document.getElementById("signup-option").addEventListener("click", function(){
+    showElement("signup-form");
+    hideElement("login-form");
+});
 
 enableLocalDebug();
 monitorAuthState();

@@ -18,20 +18,23 @@
     </header>
     
     <div id="unauthorized" style="display: block">
-        <p id="login-message">Please log in to view your feed.</p>
+        <p id="login-message">Please log in to post.</p>
     </div>
 
-    <article id="feed" style="display: none">
+    <div id="post-form" style="display: none">
         <form>
             <fieldset>
                 <div>
                     <legend>Poster</legend>
-                    <input id="poster" type="file">
-                    <button id="post">Post</button>
+                    <input id="poster-file" type="file">
+                    <button id="post-btn">Post</button>
                 </div>
             </fieldset>
         </form>
-    </article>
+    </div>
+    <div id="feed">
+        
+    </div>
     <script type="text/javascript" src="../inc/Aerophane.js"></script>
     <script type="text/javascript" src="../inc/main.js"></script>
 </body>
