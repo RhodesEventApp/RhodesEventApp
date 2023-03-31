@@ -63,18 +63,18 @@ const uploadFile = () => {
     const fileRef = ref(storageRef, file.name);
     uploadBytes(fileRef, file).then((snapshot) => {
         console.log('File uploaded!');
-    });
-    getDownloadURL(fileRef)
-        .then((url) => {
+        getDownloadURL(fileRef).then((url) => {
             addDatabaseEntry(username, url).then(() => {
                 window.location.reload();
             }).catch((error) => {
                 console.log(error);
             });
-        })
-        .catch((error) => {
+        }).catch((error) => {
             console.log(error);
         });
+    }).catch((error) => {
+        console.log(error);
+    });
 }
 
 const displayPosts = async () => {
