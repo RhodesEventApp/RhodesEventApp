@@ -1,4 +1,4 @@
-## Testing Firebase Auth
+## Testing locally
 ### Install Firebase CLI (if not already):
 `npm install -g firebase-tools`
 ### Start emulator:
