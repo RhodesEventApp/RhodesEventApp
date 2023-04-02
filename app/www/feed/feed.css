@@ -1,0 +1,20 @@
+.username {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: blue;
+    text-decoration: none;
+    margin: auto;
+}
+
+.caption {
+    font-size: 1.1em;
+    color: black;
+    margin: auto;
+}
+
+.poster {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    padding-bottom: 0px !important;
+}

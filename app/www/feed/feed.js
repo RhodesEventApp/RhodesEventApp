@@ -46,11 +46,12 @@ const monitorAuthState = async () => {
     })
 }
 
-const addDatabaseEntry = async (username, fileurl) => {
+const addDatabaseEntry = async (username, fileurl, caption) => {
     try {
         const docRef = await addDoc(collection(db, "posts"), {
             username: username,
             file: fileurl,
+            caption: caption,
         });
         console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -59,12 +60,13 @@ const addDatabaseEntry = async (username, fileurl) => {
 }
 
 const uploadFile = () => {
+    const caption = document.getElementById("caption").value;
     const file = document.getElementById("poster-file").files[0];
     const fileRef = ref(storageRef, file.name);
     uploadBytes(fileRef, file).then((snapshot) => {
         console.log('File uploaded!');
         getDownloadURL(fileRef).then((url) => {
-            addDatabaseEntry(username, url).then(() => {
+            addDatabaseEntry(username, url, caption).then(() => {
                 window.location.reload();
             }).catch((error) => {
                 console.log(error);
@@ -83,8 +85,9 @@ const displayPosts = async () => {
         document.getElementById("feed").innerHTML +=
         `
         <article>
-            <p>${doc.get("username")}</p>
-            <img src="${doc.get("file")}" style="object-fit: fill; max-width: 100%;">
+            <p class="username">${doc.get("username")}</p>
+            <p class="caption">${doc.get("caption")}</p>
+            <img class="poster" src="${doc.get("file")}">
         </article>
         `
     });
