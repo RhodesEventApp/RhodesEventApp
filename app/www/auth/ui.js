@@ -1,14 +1,11 @@
 import { 
-    getAuth,
     onAuthStateChanged, 
-    signOut,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
     connectAuthEmulator
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
-import { auth, createAccount, loginEmailPassword, logout, enableLocalDebug } from './auth.js';
+import { createAccount, loginEmailPassword, logout } from './auth.js';
 import { showElement, hideElement } from '../common/ui.js';
+import { auth } from '../common/firebase.js';
 
 const showLoggedUser = (username, email) => {
     document.getElementById("logged-user").innerHTML = `You are logged in as ${username} (${email})`;
@@ -73,5 +70,5 @@ document.getElementById("signup-option").addEventListener("click", function(){
     hideElement("login-form");
 });
 
-enableLocalDebug();
+connectAuthEmulator(auth, "http://localhost:9099");
 monitorAuthState();

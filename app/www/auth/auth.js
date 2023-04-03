@@ -1,19 +1,12 @@
 import { 
-    getAuth,
-    onAuthStateChanged, 
     signOut,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     updateProfile,
-    connectAuthEmulator
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
-import { app } from '../common/firebase.js';
+import { auth } from '../common/firebase.js';
 import { showElement } from '../common/ui.js';
-
-const auth = getAuth(app);
-
-// let username = null;
 
 // Login using email/password
 const loginEmailPassword = async () => {
@@ -56,8 +49,4 @@ const logout = async () => {
     await signOut(auth);
 }
 
-const enableLocalDebug = () => {
-    connectAuthEmulator(auth, "http://localhost:9099");
-}
-
-export {auth, loginEmailPassword, createAccount, logout, enableLocalDebug};
+export {auth, loginEmailPassword, createAccount, logout};

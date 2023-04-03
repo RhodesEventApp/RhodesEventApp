@@ -1,5 +1,4 @@
 import { 
-    getStorage,
     ref,
     uploadBytes,
     getDownloadURL,
@@ -7,7 +6,6 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-storage.js';
 
 import { 
-    getFirestore,
     collection,
     addDoc,
     connectFirestoreEmulator,
@@ -19,15 +17,8 @@ import {
     connectAuthEmulator,
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
-
-import { app } from '../common/firebase.js';
-import { auth, enableLocalDebug } from '../auth/auth.js';
+import { auth, storage, storageRef, db } from '../common/firebase.js';
 import { hideElement, showElement } from '../common/ui.js';
-
-const storage = getStorage(app);
-const storageRef = ref(storage);
-
-const db = getFirestore(app);
 
 let username = null;
 
