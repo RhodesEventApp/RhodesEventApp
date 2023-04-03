@@ -64,7 +64,6 @@ const uploadFile = () => {
     const file = document.getElementById("poster-file").files[0];
     const fileRef = ref(storageRef, file.name);
     uploadBytes(fileRef, file).then((snapshot) => {
-        console.log('File uploaded!');
         getDownloadURL(fileRef).then((url) => {
             addDatabaseEntry(username, url, caption).then(() => {
                 window.location.reload();

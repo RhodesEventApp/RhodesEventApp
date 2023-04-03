@@ -7,7 +7,7 @@
     <author email="chrisbroski@gmail.com" href="http://chaosscape.com">
         Chris Broski
     </author>
-    <content src="home/home.html" />
+    <content src="feed/feed.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

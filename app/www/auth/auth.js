@@ -23,8 +23,8 @@ const loginEmailPassword = async () => {
         await signInWithEmailAndPassword(auth, email, password);
     }
     catch(error) {
-        console.log(`There was an error: ${error}`);
-        showLoginError(error);
+        showElement("error-message");
+        document.getElementById("error-message").innerHTML = `${error.message}`;
     }
 }
 
@@ -42,12 +42,12 @@ const createAccount = async () => {
 
             }).catch((error) => {
                 showElement("error-message");
-                document.getElementById("error-message").innerHTML = `Error${error.code}: ${error.message}`;
+                document.getElementById("error-message").innerHTML = `${error.message}`;
             });
         })
         .catch((error) => {
             showElement("error-message");
-            document.getElementById("error-message").innerHTML = `Error${error.code}: ${error.message}`;
+            document.getElementById("error-message").innerHTML = `${error.message}`;
         });
 }
 
