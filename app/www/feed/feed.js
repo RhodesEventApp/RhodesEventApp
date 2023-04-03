@@ -10,6 +10,8 @@ import {
     addDoc,
     connectFirestoreEmulator,
     getDocs,
+    updateDoc,
+    doc,
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
 import {
@@ -43,6 +45,7 @@ const addDatabaseEntry = async (username, fileurl, caption) => {
             username: username,
             file: fileurl,
             caption: caption,
+            star: 0,
         });
         console.log("Document written with ID: ", docRef.id);
     } catch (e) {
@@ -78,8 +81,24 @@ const displayPosts = async () => {
             <p class="username">${doc.get("username")}</p>
             <p class="caption">${doc.get("caption")}</p>
             <img class="poster" src="${doc.get("file")}">
+            <button class="star-btn" id="${doc.id}">Star</button><span class="stars">0 people are interested in this event</span>
         </article>
         `
+    });
+}
+
+const updateStar = async (id) => {
+    postRef = doc(db, "posts", id);
+    await updateDoc(postRef, "star", postRef.get("star") + 1);
+}
+
+
+const bindStarButtons = () => {
+    [...document.getElementsByClassName("star-btn")].forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            updateStar(event.target.id);
+        });
     });
 }
 
@@ -92,4 +111,6 @@ connectStorageEmulator(storage, "localhost", 9199);
 connectFirestoreEmulator(db, "localhost", 8080);
 connectAuthEmulator(auth, "http://localhost:9099");
 monitorAuthState();
-displayPosts();
+displayPosts().then(() => {
+    bindStarButtons();
+});
