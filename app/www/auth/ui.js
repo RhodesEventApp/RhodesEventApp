@@ -9,7 +9,7 @@ import {
 
 import { createAccount, loginEmailPassword, logout } from './auth.js';
 import { showElement, hideElement } from '../common/ui.js';
-import { auth } from '../common/firebase.js';
+import { auth, db } from '../common/firebase.js';
 
 const showLoggedUser = (username, email) => {
     document.getElementById("logged-user").innerHTML = `You are logged in as ${username} (${email})`;

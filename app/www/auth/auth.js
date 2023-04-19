@@ -10,7 +10,7 @@ import {
     addDoc
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
-import { auth } from '../common/firebase.js';
+import { auth, db } from '../common/firebase.js';
 import { showElement } from '../common/ui.js';
 
 // Login using email/password
@@ -35,8 +35,8 @@ const createAccount = async () => {
         .then((userCredential) => {
             updateProfile(auth.currentUser, {
                 displayName: username,
-            }).then(() => {
-                addDatabaseEntry(username, email, auth.currentUser.uid);
+            }).then(async () => {
+                await addDatabaseEntry(username, email, auth.currentUser.uid);
                 window.location.reload();
             }).catch((error) => {
                 showElement("error-message");
