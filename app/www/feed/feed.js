@@ -13,6 +13,7 @@ import {
     getDocs,
     updateDoc,
     doc,
+    arrayUnion,
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
 import {
@@ -25,6 +26,9 @@ import { hideElement, showElement } from '../common/ui.js';
 
 let username = null;
 let userid = null;
+let starredPosts = null;
+
+let userRef = null;
 
 // Monitor auth state
 const monitorAuthState = async () => {
@@ -34,6 +38,8 @@ const monitorAuthState = async () => {
             hideElement("unauthorized");
             username = user.displayName;
             userid = user.uid;
+            userRef = doc(db, "users", userid);
+            getStarredPosts();
         }
         else {
             hideElement("post-form");
@@ -42,7 +48,14 @@ const monitorAuthState = async () => {
     })
 }
 
-const addDatabaseEntry = async (username, uid, fileurl, caption) => {
+const getStarredPosts = async () => {
+    let user = await getDoc(userRef);
+    starredPosts = await user.get("starred");
+    console.log(starredPosts);
+}
+
+
+const addDatabaseEntry = async (username, fileurl, caption) => {
     const docRef = await addDoc(collection(db, "posts"), {
         username: username,
         file: fileurl,
@@ -92,6 +105,8 @@ const updateStar = async (id) => {
     let curr = post.get("star");
     document.getElementById(id).nextElementSibling.innerHTML = `${curr + 1} people are interested in this event`;
     await updateDoc(postRef, "star", curr + 1);
+    // starredPosts = starredPosts.push(id);
+    await updateDoc(userRef, "starred", arrayUnion(id));
 }
 
 

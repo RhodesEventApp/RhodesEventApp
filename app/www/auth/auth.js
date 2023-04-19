@@ -7,7 +7,9 @@ import {
 
 import { 
     collection,
-    addDoc
+    addDoc,
+    setDoc,
+    doc,
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
 import { auth, db } from '../common/firebase.js';
@@ -55,18 +57,14 @@ const logout = async () => {
 }
 
 const addDatabaseEntry = async (username, email, uid) => {
-    try {
-        const docRef = await addDoc(collection(db, "users"), {
-            uid: uid,
-            username: username,
-            email: email,
-            posts: [],
-            starred: [],
-        });
-        console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
+    let userRef = doc(db, "users", uid);
+    await setDoc(userRef, {
+        uid: uid,
+        username: username,
+        email: email,
+        posts: [],
+        starred: [],
+    });
 }
 
 export {auth, loginEmailPassword, createAccount, logout};
