@@ -3,6 +3,10 @@ import {
     connectAuthEmulator
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
+import { 
+    connectFirestoreEmulator,
+} from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
+
 import { createAccount, loginEmailPassword, logout } from './auth.js';
 import { showElement, hideElement } from '../common/ui.js';
 import { auth } from '../common/firebase.js';
@@ -71,4 +75,5 @@ document.getElementById("signup-option").addEventListener("click", function(){
 });
 
 connectAuthEmulator(auth, "http://localhost:9099");
+connectFirestoreEmulator(db, "localhost", 8080);
 monitorAuthState();

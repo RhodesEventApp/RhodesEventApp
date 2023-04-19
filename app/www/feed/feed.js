@@ -9,6 +9,7 @@ import {
     collection,
     addDoc,
     connectFirestoreEmulator,
+    getDoc,
     getDocs,
     updateDoc,
     doc,
@@ -23,6 +24,7 @@ import { auth, storage, storageRef, db } from '../common/firebase.js';
 import { hideElement, showElement } from '../common/ui.js';
 
 let username = null;
+let userid = null;
 
 // Monitor auth state
 const monitorAuthState = async () => {
@@ -31,6 +33,7 @@ const monitorAuthState = async () => {
             showElement("post-form");
             hideElement("unauthorized");
             username = user.displayName;
+            userid = user.uid;
         }
         else {
             hideElement("post-form");
@@ -39,18 +42,14 @@ const monitorAuthState = async () => {
     })
 }
 
-const addDatabaseEntry = async (username, fileurl, caption) => {
-    try {
-        const docRef = await addDoc(collection(db, "posts"), {
-            username: username,
-            file: fileurl,
-            caption: caption,
-            star: 0,
-        });
-        console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-        console.error("Error adding document: ", e);
-    }
+const addDatabaseEntry = async (username, uid, fileurl, caption) => {
+    const docRef = await addDoc(collection(db, "posts"), {
+        username: username,
+        file: fileurl,
+        caption: caption,
+        star: 0,
+    });
+    // const users = doc(db, "users", uid);
 }
 
 const uploadFile = () => {
@@ -81,15 +80,18 @@ const displayPosts = async () => {
             <p class="username">${doc.get("username")}</p>
             <p class="caption">${doc.get("caption")}</p>
             <img class="poster" src="${doc.get("file")}">
-            <button class="star-btn" id="${doc.id}">Star</button><span class="stars">0 people are interested in this event</span>
+            <button class="star-btn" id="${doc.id}">Star</button><span class="stars">${doc.get("star")} people are interested in this event</span>
         </article>
         `
     });
 }
 
 const updateStar = async (id) => {
-    postRef = doc(db, "posts", id);
-    await updateDoc(postRef, "star", postRef.get("star") + 1);
+    let postRef = doc(db, "posts", id);
+    let post = await getDoc(postRef);
+    let curr = post.get("star");
+    document.getElementById(id).nextElementSibling.innerHTML = `${curr + 1} people are interested in this event`;
+    await updateDoc(postRef, "star", curr + 1);
 }
 
 

@@ -5,6 +5,11 @@ import {
     updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js';
 
+import { 
+    collection,
+    addDoc
+} from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
+
 import { auth } from '../common/firebase.js';
 import { showElement } from '../common/ui.js';
 
@@ -28,11 +33,11 @@ const createAccount = async () => {
     var username = document.getElementById("username").value;
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
             updateProfile(auth.currentUser, {
                 displayName: username,
             }).then(() => {
-
+                addDatabaseEntry(username, email, auth.currentUser.uid);
+                window.location.reload();
             }).catch((error) => {
                 showElement("error-message");
                 document.getElementById("error-message").innerHTML = `${error.message}`;
@@ -47,6 +52,21 @@ const createAccount = async () => {
 // Log out
 const logout = async () => {
     await signOut(auth);
+}
+
+const addDatabaseEntry = async (username, email, uid) => {
+    try {
+        const docRef = await addDoc(collection(db, "users"), {
+            uid: uid,
+            username: username,
+            email: email,
+            posts: [],
+            starred: [],
+        });
+        console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+        console.error("Error adding document: ", e);
+    }
 }
 
 export {auth, loginEmailPassword, createAccount, logout};
