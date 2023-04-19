@@ -14,6 +14,7 @@ import {
     updateDoc,
     doc,
     arrayUnion,
+    arrayRemove
 } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
 
 import {
@@ -26,7 +27,7 @@ import { hideElement, showElement } from '../common/ui.js';
 
 let username = null;
 let userid = null;
-let starredPosts = null;
+let starredPosts = [];
 
 let userRef = null;
 
@@ -87,36 +88,81 @@ const uploadFile = () => {
 const displayPosts = async () => {
     const querySnapshot = await getDocs(collection(db, "posts"));
     querySnapshot.forEach((doc) => {
+        let option = "Star";
+        if (starredPosts.includes(doc.id)) {
+            option = "Unstar";
+        }
         document.getElementById("feed").innerHTML +=
         `
         <article>
             <p class="username">${doc.get("username")}</p>
             <p class="caption">${doc.get("caption")}</p>
             <img class="poster" src="${doc.get("file")}">
-            <button class="star-btn" id="${doc.id}">Star</button><span class="stars">${doc.get("star")} people are interested in this event</span>
+            <button class="star-btn" id="${doc.id}">${option}</button><span class="stars">${doc.get("star")} people are interested in this event</span>
         </article>
-        `
+        `;
     });
 }
 
-const updateStar = async (id) => {
+const addStar = async (id) => {
     let postRef = doc(db, "posts", id);
     let post = await getDoc(postRef);
     let curr = post.get("star");
-    document.getElementById(id).nextElementSibling.innerHTML = `${curr + 1} people are interested in this event`;
+    let button = document.getElementById(id);
+    button.nextElementSibling.innerHTML = `${curr + 1} people are interested in this event`;
+    button.innerHTML = "Unstar";
+    bindButton(button, removeStar);
     await updateDoc(postRef, "star", curr + 1);
-    // starredPosts = starredPosts.push(id);
+    starredPosts.push(id);
     await updateDoc(userRef, "starred", arrayUnion(id));
 }
 
+const removeStar = async (id) => {
+    let postRef = doc(db, "posts", id);
+    let post = await getDoc(postRef);
+    let curr = post.get("star");
+    let button = document.getElementById(id);
+    button.nextElementSibling.innerHTML = `${curr - 1} people are interested in this event`;
+    button.innerHTML = "Star";
+    bindButton(button, addStar);
+    await updateDoc(postRef, "star", curr - 1);
+    const index = starredPosts.indexOf(5);
+    if (index > -1) {
+        starredPosts.splice(index, 1);
+    }
+    await updateDoc(userRef, "starred", arrayRemove(id));
+}
+
+const bindButton = (button, funct) => {
+    button = removeBinding(button);
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
+        funct(event.target.id);
+    });
+}
 
 const bindStarButtons = () => {
     [...document.getElementsByClassName("star-btn")].forEach((button) => {
-        button.addEventListener("click", (event) => {
-            event.preventDefault();
-            updateStar(event.target.id);
-        });
+        if (button.innerHTML == "Unstar") {
+            // button.addEventListener("click", (event) => {
+            //     event.preventDefault();
+            //     removeStar(event.target.id);
+            // });
+            bindButton(button, removeStar);
+        } else {
+            // button.addEventListener("click", (event) => {
+            //     event.preventDefault();
+            //     addStar(event.target.id);
+            // });
+            bindButton(button, addStar);
+        }
     });
+}
+
+const removeBinding = (button) => {
+    let newButton = button.cloneNode(true);
+    button.parentNode.replaceChild(newButton, button);
+    return newButton;
 }
 
 document.getElementById("post-btn").addEventListener("click", function(event){
