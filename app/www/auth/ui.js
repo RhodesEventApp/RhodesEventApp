@@ -74,6 +74,6 @@ document.getElementById("signup-option").addEventListener("click", function(){
     hideElement("login-form");
 });
 
-connectAuthEmulator(auth, "http://localhost:9099");
-connectFirestoreEmulator(db, "localhost", 8080);
+// connectAuthEmulator(auth, "http://localhost:9099");
+// connectFirestoreEmulator(db, "localhost", 8080);
 monitorAuthState();

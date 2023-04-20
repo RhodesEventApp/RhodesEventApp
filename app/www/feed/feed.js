@@ -170,9 +170,9 @@ document.getElementById("post-btn").addEventListener("click", function(event){
     uploadFile();
   });
 
-connectStorageEmulator(storage, "localhost", 9199);
-connectFirestoreEmulator(db, "localhost", 8080);
-connectAuthEmulator(auth, "http://localhost:9099");
+// connectStorageEmulator(storage, "localhost", 9199);
+// connectFirestoreEmulator(db, "localhost", 8080);
+// connectAuthEmulator(auth, "http://localhost:9099");
 monitorAuthState();
 displayPosts().then(() => {
     bindStarButtons();
