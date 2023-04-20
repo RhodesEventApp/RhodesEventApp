@@ -33,14 +33,13 @@ let userRef = null;
 
 // Monitor auth state
 const monitorAuthState = async () => {
-    onAuthStateChanged(auth, user => {
+    onAuthStateChanged(auth, (user) => {
         if (user) {
             showElement("post-form");
             hideElement("unauthorized");
             username = user.displayName;
             userid = user.uid;
             userRef = doc(db, "users", userid);
-            getStarredPosts();
         }
         else {
             hideElement("post-form");
@@ -63,7 +62,6 @@ const addDatabaseEntry = async (username, fileurl, caption) => {
         caption: caption,
         star: 0,
     });
-    // const users = doc(db, "users", uid);
 }
 
 const uploadFile = () => {
@@ -87,8 +85,10 @@ const uploadFile = () => {
 
 const displayPosts = async () => {
     const querySnapshot = await getDocs(collection(db, "posts"));
+    await getStarredPosts();
     querySnapshot.forEach((doc) => {
         let option = "Star";
+        console.log(starredPosts.includes(doc.id));
         if (starredPosts.includes(doc.id)) {
             option = "Unstar";
         }
@@ -144,16 +144,8 @@ const bindButton = (button, funct) => {
 const bindStarButtons = () => {
     [...document.getElementsByClassName("star-btn")].forEach((button) => {
         if (button.innerHTML == "Unstar") {
-            // button.addEventListener("click", (event) => {
-            //     event.preventDefault();
-            //     removeStar(event.target.id);
-            // });
             bindButton(button, removeStar);
         } else {
-            // button.addEventListener("click", (event) => {
-            //     event.preventDefault();
-            //     addStar(event.target.id);
-            // });
             bindButton(button, addStar);
         }
     });
@@ -170,9 +162,9 @@ document.getElementById("post-btn").addEventListener("click", function(event){
     uploadFile();
   });
 
-// connectStorageEmulator(storage, "localhost", 9199);
-// connectFirestoreEmulator(db, "localhost", 8080);
-// connectAuthEmulator(auth, "http://localhost:9099");
+connectStorageEmulator(storage, "localhost", 9199);
+connectFirestoreEmulator(db, "localhost", 8080);
+connectAuthEmulator(auth, "http://localhost:9099");
 monitorAuthState();
 displayPosts().then(() => {
     bindStarButtons();

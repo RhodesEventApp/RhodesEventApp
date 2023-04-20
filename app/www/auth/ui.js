@@ -19,7 +19,6 @@ const showLoggedUser = (username, email) => {
 const monitorAuthState = async () => {
     onAuthStateChanged(auth, user => {
         if (user) {
-            console.log(user)
             showLoggedUser(user.displayName, user.email);
             showElement("logout");
             hideElement("form");
@@ -74,6 +73,6 @@ document.getElementById("signup-option").addEventListener("click", function(){
     hideElement("login-form");
 });
 
-// connectAuthEmulator(auth, "http://localhost:9099");
-// connectFirestoreEmulator(db, "localhost", 8080);
+connectAuthEmulator(auth, "http://localhost:9099");
+connectFirestoreEmulator(db, "localhost", 8080);
 monitorAuthState();
