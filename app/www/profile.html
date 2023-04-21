@@ -17,18 +17,30 @@
         <button>Menu</button>
         <h1>Profile</h1>
     </header>
-    
-    <article>
-        <div id="unauthorized" style="display: block">
-            <p id="login-message">Please log in to view your profile.</p>
-        </div>
-        <div id="authorized" style="display: none">
-            <div id="username"></div>
-            <div id="email"></div>
-        </div>
-    </article>
-    <div id="feed">
+    <div  id="authorized">
+        <article>
+            <form id="form">
+                <fieldset>
+                    <div id="update-form">
+                        <legend>Profile</legend>
+                        <label>Email</label>
+                        <input id="update-email">
+                        <label>Username</label>
+                        <input id="update-username">
+                        <label>Password</label>
+                        <input id="update-password" type="password">
+                        <button id="update-btn">Update</button>
+                        <button id="logout-btn">Log out</button>
+                    </div>
+                </fieldset>
+            </form>
+        </article>
+        <div id="feed">
 
+        </div>
+    </div>
+    <div id="unauthorized">
+        Please log in to view your profile
     </div>
     <script type="text/javascript" src="./inc/Aerophane.js"></script>
     <script type="text/javascript" src="./inc/main.js"></script>
