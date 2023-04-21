@@ -32,7 +32,7 @@ let starredPosts = [];
 let userRef = null;
 
 // Monitor auth state
-const monitorAuthState = async () => {
+const monitorAuthState = () => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             showElement("post-form");
@@ -51,7 +51,6 @@ const monitorAuthState = async () => {
 const getStarredPosts = async () => {
     let user = await getDoc(userRef);
     starredPosts = await user.get("starred");
-    console.log(starredPosts);
 }
 
 
