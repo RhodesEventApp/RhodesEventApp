@@ -87,13 +87,12 @@ const displayPosts = async () => {
     await getStarredPosts();
     querySnapshot.forEach((doc) => {
         let option = "Star";
-        console.log(starredPosts.includes(doc.id));
         if (starredPosts.includes(doc.id)) {
             option = "Unstar";
         }
         document.getElementById("feed").innerHTML +=
         `
-        <article>
+        <article class="post">
             <p class="username">${doc.get("username")}</p>
             <p class="caption">${doc.get("caption")}</p>
             <img class="poster" src="${doc.get("file")}">
@@ -125,7 +124,7 @@ const removeStar = async (id) => {
     button.innerHTML = "Star";
     bindButton(button, addStar);
     await updateDoc(postRef, "star", curr - 1);
-    const index = starredPosts.indexOf(5);
+    const index = starredPosts.indexOf(id);
     if (index > -1) {
         starredPosts.splice(index, 1);
     }
@@ -159,7 +158,7 @@ const removeBinding = (button) => {
 document.getElementById("post-btn").addEventListener("click", function(event){
     event.preventDefault();
     uploadFile();
-  });
+});
 
 connectStorageEmulator(storage, "localhost", 9199);
 connectFirestoreEmulator(db, "localhost", 8080);
@@ -168,4 +167,20 @@ connectAuthEmulator(auth, "http://localhost:9099");
 monitorAuthState();
 displayPosts().then(() => {
     bindStarButtons();
+
+    document.getElementById("all-posts-option").addEventListener("click", function(){
+        let posts = document.getElementsByClassName("post");
+        for (let post of posts) {
+            post.style.display = "block";
+        }
+    });
+    
+    document.getElementById("starred-posts-option").addEventListener("click", function(){
+        let posts = document.getElementsByClassName("post");
+        for (let post of posts) {
+            if (!starredPosts.includes(post.getElementsByTagName("button")[0].id)) {
+                post.style.display = "none";
+            }
+        }
+    });
 });

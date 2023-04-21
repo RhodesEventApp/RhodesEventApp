@@ -76,19 +76,6 @@ const getStarredPosts = async () => {
 }
 
 const displayPosts = async () => {
-    // const q = query(collection(db, "posts"), where("id", "in", starredPosts));
-    // const querySnapshot = await getDocs(q);
-    // querySnapshot.forEach((doc) => {
-    //     document.getElementById("feed").innerHTML +=
-    //     `
-    //     <article>
-    //         <p class="username">${doc.get("username")}</p>
-    //         <p class="caption">${doc.get("caption")}</p>
-    //         <img class="poster" src="${doc.get("file")}">
-    //     </article>
-    //     `;
-    // });
-
     starredPosts.forEach(async (postid) => {
         let postRef = doc(db, "posts", postid);
         let post = await getDoc(postRef);
